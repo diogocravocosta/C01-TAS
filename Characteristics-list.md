@@ -4,7 +4,7 @@ Characteristics to be analyzed:
 
 -Max Camber
 
--Position of max thickness
+-Position of max thickness 
 
 -Leading edge radius
 
