@@ -2,7 +2,7 @@ Characteristics to be analyzed:
 
 -Thickness to Chord ratio
 
--Camber
+-Max Camber
 
 -Position of max thickness
 
