@@ -1,6 +1,8 @@
 
 # THIS FILE DOESN'T REALLY NEED ANY EDITING SO BE CAREFUL WHEN YOU TOUCH STUFF THANKS ;)
 
+# could all of this have been done in way less lines of code? maybe. but don't be mean to me i tried my best
+
 def get_airfoil_data(one_value, sample_num): # the one_value thing is just so we can use this function either to print out ALL the samples vs. if we want to get it for just one sample (i.e. while plotting)
 
    # reading data file

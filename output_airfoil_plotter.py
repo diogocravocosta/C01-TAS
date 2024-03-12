@@ -20,6 +20,7 @@ for coordinate_pair_i in range(0, len(samples[1])):
 # i don't care, it's pretty
 colors = ['b','g','r','c','m','y','pink','purple','orange','maroon']
 
+
 plt.figure(figsize=(15,4))
 plt.plot(x_vals, y_vals, '-o', color=random.choice(colors), markersize=4)
 
