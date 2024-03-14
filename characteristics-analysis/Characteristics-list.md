@@ -15,4 +15,3 @@ Characteristics to be analyzed:
 -Position of Max camber
 
 -Mean Camber
-Test alteration
