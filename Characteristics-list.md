@@ -1,17 +1,17 @@
 Characteristics to be analyzed:
 
--Thickness to Chord ratio
+-Thickness to Chord ratio -> done
 
--Max Camber
+-Max Camber -> done
 
--Position of max thickness 
+-Position of max thickness -> done
 
 -Leading edge radius
 
--Trailing Edge Angle
+-Trailing Edge Angle -> done
 
--Leading Edge Angle
+-Leading Edge Angle - > done
 
--Position of Max camber
+-Position of Max camber -> done
 
--Mean Camber
+-Mean Camber -> done
