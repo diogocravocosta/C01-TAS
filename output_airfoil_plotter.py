@@ -9,11 +9,14 @@ x_vals = []
 y_vals = []
 
 
-samples, latent_parameters = get_airfoil_data(False, sample_n)
+samples, latent_parameters = get_airfoil_data(True, sample_n)
 
 for coordinate_pair_i in range(0, len(samples[1])):
     x_vals.append(samples[1][coordinate_pair_i][0])
     y_vals.append(samples[1][coordinate_pair_i][1])
+
+print(samples[0])
+
 
 # yes i randomize the color of each airfoil that is plotted.
 # yes that is unnecessary

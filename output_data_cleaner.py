@@ -75,6 +75,7 @@ def get_airfoil_data(one_value, sample_num): # the one_value thing is just so we
    return samples, latent_parameters
 
 
+
 # uncomment the following to get a printout of the samples / latent parameters
 # samples, latent_parameters = get_airfoil_data(False, 0) # keep this as False, doesn't matter what the number is so just keep 0
 # print(samples)
