@@ -23,6 +23,13 @@ def xyvalues(sample, line):
     next_relevantstring = newsample[newsample.find("N"+str(sample+1)):newsample.find("N"+str(sample+2))]
     next_samplestart = next_relevantstring[next_relevantstring.find("L")+1:]
 
+    if sample == 9998:
+        samplestart = 2009599
+        next_samplestart = 2009800
+    elif sample == 9999:
+        samplestart = 2009800
+        next_samplestart = 2010001
+    
     line = line + int(samplestart) -1
     if line > int(next_samplestart) - 3 or line - int(samplestart) < 0 : #returns False if a line outside the specified sample is summoned
         return False
@@ -32,3 +39,5 @@ def xyvalues(sample, line):
         xval = float(lineStr[3:17])
         yval = float(lineStr[18:33])
         return xval, yval
+
+#this code was written before realising each sample has exactly 199 samples smh
