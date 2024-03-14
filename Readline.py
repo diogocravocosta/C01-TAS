@@ -1,9 +1,23 @@
 import numpy as np
 import math
 
-
 f = open("Random_samples.txt", "r") 
 content = f.readlines()
+
+def xyvalues(sample, line):   
+    lineStrA = content[line+sample*201]
+    if line > 0 and line < 200 and sample < 10000:
+        xval = float(lineStrA[3:17])
+        yval = float(lineStrA[18:33])    
+        return xval, yval
+    else:
+        return False
+
+
+
+
+"""   BETA: this code was written before realising each sample has exactly 199 datapoints smh
+kilian lied
 
 newsample = ""
 currentsamples = 0
@@ -39,5 +53,4 @@ def xyvalues(sample, line):
         xval = float(lineStr[3:17])
         yval = float(lineStr[18:33])
         return xval, yval
-
-#this code was written before realising each sample has exactly 199 samples smh
+"""
