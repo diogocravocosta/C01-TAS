@@ -1,5 +1,12 @@
 # Max camber
-from output_data_cleaner import get_airfoil_data
+from output_data_cleaner import get_output_airfoil_data
+def camber(sample_num):
+    samples, latent_parameters = get_output_airfoil_data(one_value = True, sample_num = sample_num) #assigns the dataset to the samples variable
+    return samples, latent_parameters
+print(camber(5))
+    
+
+
 #def max_camber():
     #for j in range(len(data)):
         #if abs(data[j][1]/2) >= maximum:
@@ -15,10 +22,3 @@ from output_data_cleaner import get_airfoil_data
             #maximum = data[j][1]
             #max_index = j
     #return data[max_index][0]
-
-def camber():
-    samples, latent parameters = get_airfoil_data(one_value = True, sample_num = 5) #assigns the dataset to the samples variable
-    
-
-
-    
