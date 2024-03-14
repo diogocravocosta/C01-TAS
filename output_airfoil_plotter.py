@@ -3,7 +3,7 @@ import random
 from output_data_cleaner import get_output_airfoil_data
 
 sample_n = random.randint(0,9999) # chooses a random airfoil sample to look at
-# sample_n = 0  # uncomment and enter specific sample number you wanna look at
+sample_n = 1  # uncomment and enter specific sample number you wanna look at
 
 x_vals = []
 y_vals = []
