@@ -36,5 +36,3 @@ def camber(sample): # returns:   polynomial for camber line,   x value of max ca
     LE_angle = np.arctan(  z[1] + z[0]*2*0  )     #arctan in radians of derivative at x = 0 & x = 1
     TE_angle = np.arctan(  z[1] + z[0]*2*1  )
     return eq, x_maxcamb, maxcamb, LE_angle, TE_angle
-
-print(camber(0))
