@@ -53,7 +53,7 @@ def get_input_data():
                 airfoil_data[j] = list(filter(None, airfoil_data[j].replace('[', '').replace(']', '').replace('\n','').strip().split(' ')))
                 airfoil_data[j] = list(map(float, airfoil_data[j]))
 
-        split_data[i] = airfoil_data # i just dit this so i could write split_data[i] more intuitively as airfoil_data so my brain would understand what's going on, see first comment in this main for loop
+        split_data[i] = airfoil_data # i just did this so i could write split_data[i] more intuitively as airfoil_data so my brain would understand what's going on, see first comment in this main for loop
 
 
     return airfoil_tags, airfoil_names, split_data, latent_parameters
