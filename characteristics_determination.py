@@ -1,6 +1,6 @@
 #determines characteristics of airfoil samples
 from input_data_cleaner import get_input_data
-import thickness-characteristics-extractor as tc
+import thickness_characteristics_extractor as tc
 import numpy as np
 airfoil_tags, airfoil_names, split_data = get_input_data() #retrieves input airfoil tag, name and its coordinates & latent parameters
 def t_c_list_input():
@@ -31,6 +31,7 @@ def t_c_position_random():
         x_output = tc.random_thickness_to_chord(i)[1]
         X_output_list.append(x_output)
     return x_output_list
+
 
 
 
