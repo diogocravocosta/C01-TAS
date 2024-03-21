@@ -15,5 +15,5 @@ def random_thickness_to_chord(sample_num): #returns the thickness to chord from 
     return thickness_to_chord, thickness_pos
 
 
-#print(random_thickness_to_chord(4))
-#print(get_output_airfoil_data(one_value= True, sample_num = 1)[0][0][1][0])
+# print(random_thickness_to_chord(4))
+# print(get_output_airfoil_data(one_value= True, sample_num = 1)[0][0][1][0])
