@@ -1,6 +1,7 @@
 import numpy as np
 import math
 from Readline import xyvalues
+import scipy
 
 from numpy.polynomial import Polynomial
 import warnings
@@ -9,7 +10,7 @@ import warnings
 x_list = []
 y_list = []
 
-def camber(sample): # returns:   polynomial for camber line,   x value of max camb,   max camb,   LE angle (rad),   TE angle (rad)
+def camber(sample): # returns:   polynomial for camber line,   x value of max camb,   max camb,   LE angle (rad),   TE angle (rad), and some extra stuff for nabihah <3
     x,y1 = xyvalues(sample,1)
     _,y2 = xyvalues(sample,199)
     x_list.append(x)
@@ -22,10 +23,18 @@ def camber(sample): # returns:   polynomial for camber line,   x value of max ca
         x_list.append(x)
         y_list.append((y1+y2)/2)
 
-
     x = np.array(x_list)
     y = np.array(y_list)
-    z = np.polyfit(x, y, 2)
+
+
+    sorted_y = [y for _,y in sorted(zip(x_list,y_list))]
+    sorted_x = sorted(x_list)
+
+    cubic_interpolant = scipy.interpolate.CubicSpline(sorted_x, sorted_y)
+
+    print(cubic_interpolant)
+
+    z = np.polyfit(x, y, 7)
     eq = str(z[2]) + " +" + str(z[1]) + "*x +" + str(z[0]) + "*x^2"
     eq = eq.replace("+-", "-")
 
@@ -38,3 +47,5 @@ def camber(sample): # returns:   polynomial for camber line,   x value of max ca
     LE_angle = np.arctan(  z[1] + z[0]*2*0  )     #arctan in radians of derivative at x = 0 & x = 1
     TE_angle = np.arctan(  z[1] + z[0]*2*1  )
     return eq, x_maxcamb, maxcamb, LE_angle, TE_angle, z, x_list, y_list
+
+camber(0)
