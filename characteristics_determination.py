@@ -1,0 +1,2 @@
+#determines characteristics of airfoil samples
+from thickness-characteristics-extractor import random_thickness_to_chord
