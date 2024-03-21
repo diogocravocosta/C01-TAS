@@ -6,7 +6,7 @@ Characteristics to be analyzed:
 
 -Position of max thickness -> done
 
--Leading edge radius
+-Leading edge radius 
 
 -Trailing Edge Angle -> done
 

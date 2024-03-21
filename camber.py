@@ -15,6 +15,14 @@ def camber(sample): # returns:   polynomial for camber line,   x value of max ca
     x_list.append(x)
     y_list.append((y1+y2)/2)
 
+    for i in range(20):
+        x_list.append(0) 
+        y_list.append(0)
+
+        x_list.append(1)
+        y_list.append(1) 
+
+
     for i in range(10,100,10):
         x,y1 = xyvalues(sample,i)
         _,y2 = xyvalues(sample,200-i)
