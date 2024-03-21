@@ -12,7 +12,7 @@ def xyvalues(sample, line):
         return xval, yval
     else:
         return False
-
+ 
 def random_latentval(sample, latent):
     lineStr = content[(sample-1)*201]
     if latent > 0 and latent < 9 and sample < 10000:
