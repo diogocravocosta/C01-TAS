@@ -25,7 +25,7 @@ def random_latentval(sample, latent):
     else:
         return False
     
-
+print(xyvalues(0,100))
 """   BETA: this code was written before realising each sample has exactly 199 datapoints smh
 kilian lied
 
