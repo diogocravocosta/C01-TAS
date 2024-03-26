@@ -50,7 +50,7 @@ def plotter(list_choice,n_latent,features): # n_latent is the index of the laten
        list=extracted_output_elements
   else :
       list= extracted_input_elements + extracted_output_elements
-  return list 
+  return list
 
 
 
