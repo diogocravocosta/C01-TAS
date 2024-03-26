@@ -30,19 +30,19 @@ def regression(x,y,degree):
 
     return response
 
-x = [1,2,3,4]
-y = [4,8,12,16]
-regress = regression(x,y,1)
-print(regress)
-ax.scatter(x,y)
-x_array = np.arange(x[0],x[-1], 0.0001)
+#x = [1,2,3,4]
+#y = [4,8,12,16]
+#regress = regression(x,y,1)
+#print(regress)
+#ax.scatter(x,y)
+#x_array = np.arange(x[0],x[-1], 0.0001)
 #y_array = regress[0] * x_array**2 + regress[1] * x_array + regress[2]
 #ax.text(x[0],y[-1], 'Regression: y = ' + str(round(regress[0], 4)) +'x**2 +' + str(round(regress[1], 4)) + 'x +' + str(round(regress[2], 4)) +  ' | R^2 = ' + str(round(regress[3], 4)) , fontsize = 10, color = 'red')
-y_array = regress[0] * x_array + regress[1]
-ax.text(x[0], y[-1], 'Regression: y = ' + str(round(regress[0], 4)) + 'x + ' + str(round(regress[1], 4)) + ' | R^2 = ' + str(round(regress[2][0], 4)))
-ax.plot(x_array, y_array, 'purple')
+#y_array = regress[0] * x_array + regress[1]
+#ax.text(x[0], y[-1], 'Regression: y = ' + str(round(regress[0], 4)) + 'x + ' + str(round(regress[1], 4)) + ' | R^2 = ' + str(round(regress[2][0], 4)))
+#ax.plot(x_array, y_array, 'purple')
 
-plt.show()
+#plt.show()
 
 
 
