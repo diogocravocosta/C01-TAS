@@ -15,7 +15,7 @@ def regression(x,y,degree):
         response = []
         response.append(parameters[0][0])
         response.append(parameters[0][1])
-        response.append(parameters[1]) #R is the pearson correlation coefficient which represents best fit if R^2 is close to one
+        response.append(parameters[1]) #R^2 value is the sum of square of residuals
     elif degree in ['Quadratic', 'quadratic', 2, 'two', 'second order']:
         Values = np.polyfit(x,y,2, full=True)
         Result = Values[0]
