@@ -27,5 +27,5 @@ def generate(x,y,Title, x_label, y_label):
 
 
 #x = np.linspace(0,1000, 10000)
-#y = np.random.rand(10000)
+#y = x + x**7
 #generate(x,y, "Test Plot", "x", "y")
