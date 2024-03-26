@@ -22,10 +22,7 @@ def extract_nth_elements(nested_list, n): # Extracts the nth element from each s
 # ignore the a,b,c stuff (trying to access latent from inpnut data function)
 a,b,c,input = get_input_data()
 a,output = get_output_airfoil_data(False, 0)
-#n = 0  # Index of the latent parameter to be extracted, 0 is example
-#extracted_input_elements = extract_nth_elements(input, n)
-#extracted_output_elements = extract_nth_elements(output,n)
-#print(extracted_output_elements)
+
 
 def plotter(list_choice,n_latent): # n_latent is the index of the latent parameter to be extracted, 0 is example. list_choice is 0 if you want the latent of input data, 1 output, any other value if you want both
   extracted_input_elements = extract_nth_elements(input, n_latent)
