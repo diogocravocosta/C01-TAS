@@ -81,8 +81,8 @@ def get_output_airfoil_data(one_value, sample_num): # the one_value thing is jus
 
 
 # samples, latent_parameters = get_output_airfoil_data(True, 0) # keep this as False, doesn't matter what the number is so just keep 0
-
-# print(samples) # just add the [1] at the end ok trust me
+#
+# print(latent_parameters[1]) # just add the [1] at the end ok trust me
 
 # print(samples)
 # print(latent_parameters)
