@@ -34,7 +34,7 @@ def regression(x,y,degree):
         response.append(Results[2])
         response.append(Results[3])
         response.append(Residual[0])
-        print(Value)
+        
 
 
 
