@@ -52,7 +52,7 @@ def regression(x,y,degree):
 #ax.text(x[0],y[-1], 'Regression: y = ' + str(round(regress[0], 4)) +'x**2 +' + str(round(regress[1], 4)) + 'x +' + str(round(regress[2], 4)) +  ' | R^2 = ' + str(round(regress[3], 4)) , fontsize = 10, color = 'red')
 #y_array = regress[0] * x_array + regress[1]
 #ax.text(x[0], y[-1], 'Regression: y = ' + str(round(regress[0], 4)) + 'x + ' + str(round(regress[1], 4)) + ' | R^2 = ' + str(round(regress[2][0], 4)))
-ax.plot(x_array, y_array, 'purple')
+#ax.plot(x_array, y_array, 'purple')
 
-plt.show()
+#plt.show()
 
