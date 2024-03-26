@@ -9,11 +9,7 @@ import warnings
 x_list = []
 y_list = []
 
-def camber(sample): # returns:   polynomial for camber line,   x value of max camb,   max camb,   LE angle (rad),   TE angle (rad), and some extra stuff for nabihah <3
-    x,y1 = xyvalues(sample,1)
-    _,y2 = xyvalues(sample,199)
-    x_list.append(x)
-    y_list.append((y1+y2)/2)
+
 def camber(sample): # returns:   polynomial for camber line,   x value of max camb,   max camb,   LE angle (rad),   TE angle (rad)
 
     for i in range(1,101,1):
