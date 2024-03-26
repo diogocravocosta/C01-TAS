@@ -5,17 +5,27 @@ f = open("Random_samples.txt", "r")
 content = f.readlines()
 
 def xyvalues(sample, line):   
-    lineStrA = content[line+sample*201]
+    lineStr = content[line+sample*201]
     if line > 0 and line < 200 and sample < 10000:
-        xval = float(lineStrA[3:17])
-        yval = float(lineStrA[18:33])    
+        xval = float(lineStr[3:17])
+        yval = float(lineStr[18:33])    
         return xval, yval
     else:
         return False
-
-
-
-
+ 
+def random_latentval(sample, latent):
+    lineStr = content[(sample-1)*201]
+    if latent > 0 and latent < 9 and sample < 10000:
+        start = 0
+        for i in range(latent):
+            start = lineStr[start+2:].find(".") + start + 2
+        stop = lineStr[start:].find(" ")
+        sample = float(lineStr[start-2:start+stop])  
+        return sample
+    else:
+        return False
+    
+#print(xyvalues(0,100))
 """   BETA: this code was written before realising each sample has exactly 199 datapoints smh
 kilian lied
 
