@@ -40,13 +40,13 @@ def regression(x,y,degree):
 
     return response
 
-x = [1,2,3,4]
-y = [1,8,27,100]
-regress = regression(x,y,3)
-print(regress)
-ax.scatter(x,y)
-x_array = np.arange(x[0],x[-1], 0.0001)
-y_array = regress[0] * x_array**3 + regress[1] * x_array**2 + regress[2] * x_array + regress[3]
+#x = [1,2,3,4]
+#y = [1,8,27,100]
+#regress = regression(x,y,3)
+#print(regress)
+#ax.scatter(x,y)
+#x_array = np.arange(x[0],x[-1], 0.0001)
+#y_array = regress[0] * x_array**3 + regress[1] * x_array**2 + regress[2] * x_array + regress[3]
 #ax.text(x[0],y[-1], 'Regression: y = ' + str(round(regress[0], 4)) +'$x^3$ +' + str(round(regress[1], 4)) + '$x^2$ +' + str(round(regress[2], 4)) +  ' | R^2 = ' + str(round(regress[3], 4)) , fontsize = 10, color = 'red')
 #y_array = regress[0] * x_array**2 + regress[1] * x_array + regress[2]
 #ax.text(x[0],y[-1], 'Regression: y = ' + str(round(regress[0], 4)) +'x**2 +' + str(round(regress[1], 4)) + 'x +' + str(round(regress[2], 4)) +  ' | R^2 = ' + str(round(regress[3], 4)) , fontsize = 10, color = 'red')
