@@ -20,13 +20,13 @@ def generate(x,y,Title, x_label, y_label):
     plt.xlabel(x_label)
     plt.ylabel(y_label)
     plt.title(Title)
-    ax.plot(x_array, y_array_linear, label = "Linear $R^2$ ="+ str(round(regress_linear[2][0], 4)), linewidth = 3)
-    ax.plot(x_array, y_array_quadratic, label = "Quadratic $R^2$ ="+ str(round(regress_quadratic[3], 4)), linewidth = 3)
-    ax.plot(x_array, y_array_cubic, label = "Cubic $R^2$ ="+ str(round(regress_cubic[4], 4)), linewidth = 3)
+    ax.plot(x_array, y_array_linear, label = "Linear $R^2$ ="+ str(round(regress_linear[2][0], 4)) + '| y = ' + str(round(regress_linear[0], 4)) + 'x + ' + str(round(regress_linear[1], 4)), linewidth = 3)
+    ax.plot(x_array, y_array_quadratic, label = "Quadratic $R^2$ =" + str(round(regress_quadratic[3], 4)) + '| y = ' + str(round(regress_quadratic[0], 4)) +'$x**2$ +' + str(round(regress_quadratic[1], 4)) + 'x +' + str(round(regress_quadratic[2], 4)), linewidth = 3)
+    ax.plot(x_array, y_array_cubic, label = "Cubic $R^2$ ="+ str(round(regress_cubic[4], 4)) + '| y = ' + str(round(regress_cubic[0], 4)) +'$x**3$ +'+ str(round(regress_cubic[1], 4)) +'$x**2$ +' + str(round(regress_cubic[2], 4)) + 'x +' + str(round(regress_cubic[3], 4)), linewidth = 3)
     ax.legend()
     plt.savefig("plot_images/"+Title +'.png')
 
 
-x = np.linspace(0,1000, 10000)
-y = x + x**7
-generate(x,y, "Test Plot", "x", "y")
+#x = np.linspace(0,1000, 10)
+#y = x + x**3
+#generate(x,y, "Test Plot", "x", "y")
