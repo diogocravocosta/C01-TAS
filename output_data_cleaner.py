@@ -26,7 +26,7 @@ def get_output_airfoil_data(one_value, sample_num): # the one_value thing is jus
          n = (i * 201) - 1
          samples.append(data[prev_n:n])
          latent_parameters.append(data[((i - 1) * 201)])
-
+   
    # cleaning up latent parameters.
    # the latent parameters are now of the following format:
    # [[1,2,3,4,5,6,7,8],[1,2,3,4,5,6,7,8],[1,2,3,4,5,6,7,8],[1,2,3,4,5,6,7,8]]

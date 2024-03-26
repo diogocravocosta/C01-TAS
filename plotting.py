@@ -3,7 +3,7 @@ import math
 import matplotlib as plt
 from input_data_cleaner import get_input_data
 from output_data_cleaner import get_output_airfoil_data
-
+from camber import camber
 def extract_nth_elements(nested_list, n): # Extracts the nth element from each sub-list within the nested list and forms a new list with these elements.
     
    # Parameters:
@@ -22,12 +22,24 @@ def extract_nth_elements(nested_list, n): # Extracts the nth element from each s
 # ignore the a,b,c stuff (trying to access latent from inpnut data function)
 a,b,c,input = get_input_data()
 a,output = get_output_airfoil_data(False, 0)
-#n = 0  # Index of the latent parameter to be extracted, 0 is example
-#extracted_input_elements = extract_nth_elements(input, n)
-#extracted_output_elements = extract_nth_elements(output,n)
-#print(extracted_output_elements)
 
-def plotter(list_choice,n_latent): # n_latent is the index of the latent parameter to be extracted, 0 is example. list_choice is 0 if you want the latent of input data, 1 output, any other value if you want both
+#this under is for camber features lists
+
+camber_features=[]
+
+for i in range (0,len(list)):
+    for j in range (1,5):
+    camber_features.append(camber(i)[j])
+ 
+x_maxcamb = camber_features[0::4]
+maxcamb = camber_features[1::4]
+le_angle = camber_features[2::4]
+te_angle = camber_features[3::4]
+
+
+
+
+def plotter(list_choice,n_latent,features): # n_latent is the index of the latent parameter to be extracted, 0 is example. list_choice is 0 if you want the latent of input data, 1 output, any other value if you want both
   extracted_input_elements = extract_nth_elements(input, n_latent)
   extracted_output_elements = extract_nth_elements(output,n_latent)
   list = []
@@ -40,12 +52,22 @@ def plotter(list_choice,n_latent): # n_latent is the index of the latent paramet
       list= extracted_input_elements + extracted_output_elements
   return list
 
+
+
 # NEED TO ADD THE FEATURES IN THIS FUNCTION ABOVE, SO THAT THE FUNCTION WILL PLOT, WORKING ON CURRENTLY :)
- 
 
 
 
 
+    
+
+#plt.scatter(list_1,list_2)
+
+    #Label your plots 
+    #plt.xlabel('') 
+    #plt.ylabel('')
+
+ #   plt.show()
 
 
        
@@ -61,16 +83,9 @@ def plotter(list_choice,n_latent): # n_latent is the index of the latent paramet
     
 
 
-#to be updated
-def plotting(list_1,list_2): 
 
-    plt.scatter(list_1,list_2)
 
-    #Label your plots 
-    #plt.xlabel('') 
-    #plt.ylabel('')
-
-    plt.show()
+    
 
 
 

@@ -3,6 +3,7 @@ import math
 from Readline import xyvalues
 import scipy
 
+from input_data_cleaner import get_input_data
 from numpy.polynomial import Polynomial
 import warnings
 
@@ -10,13 +11,25 @@ x_list = []
 y_list = []
 
 
-def camber(sample): # returns:   polynomial for camber line,   x value of max camb,   max camb,   LE angle (rad),   TE angle (rad)
+def camber(sample,RandOrInput): # returns:   polynomial for camber line,   x value of max camb,   max camb,   LE angle (rad),   TE angle (rad)
+        # Random data: 0  input data: 1
+    if RandOrInput == 0:
+        for i in range(1,101,1):
+            x,y1 = xyvalues(sample,i)
+            _,y2 = xyvalues(sample,200-i)
+            x_list.append(x)
+            y_list.append((y1+y2)/2)
 
-    for i in range(1,101,1):
-        x,y1 = xyvalues(sample,i)
-        _,y2 = xyvalues(sample,200-i)
-        x_list.append(x)
-        y_list.append((y1+y2)/2)
+    elif RandOrInput == 1:
+        _,_,A,_ = get_input_data()
+        xy = A[sample][1:]
+        for i in range(0,int((len(xy)-1)/2)+1):
+            x,y1 = xy[i]
+            _,y2 = xy[len(xy)-i-1]
+            x_list.append(x)
+            y_list.append((y1+y2)/2)      
+    else:
+        return False
 
     x = np.array(x_list)
     y = np.array(y_list)
