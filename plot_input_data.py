@@ -6,7 +6,7 @@ x_vals = []
 y_vals = []
 
 
-airfoil_tags, airfoil_names, split_data = get_input_data()
+airfoil_tags, airfoil_names, split_data, latent_parameters = get_input_data()
 
 airfoil_n = random.randint(0,1618)
 

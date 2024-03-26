@@ -20,13 +20,14 @@ for coordinate_pair_i in range(0, len(samples[1])):
     y = samples[1][coordinate_pair_i][1]
     x_vals.append(x)
     y_vals.append(y)
-    camber_value = z[0]*x*x + z[1]*x + z[2]
+    camber_value = z[0]*(x**7) + z[1]*(x**6) + z[2]*(x**5) + z[3]*(x**4) + z[4]*(x**3) + z[5]*(x**2) + z[6]*x + z[7]
     camber_vals.append(camber_value)
 
 # print(samples[0])
 
-print(camber_x)
-print(camber_y)
+# print(camber_x)
+# print(camber_y)
+
 
 # yes i randomize the color of each airfoil that is plotted.
 # yes that is unnecessary
@@ -36,7 +37,7 @@ colors = ['b','g','r','c','m','y','pink','purple','orange','maroon']
 
 plt.figure(figsize=(15,4))
 plt.plot(x_vals, y_vals, '-o', color=random.choice(colors), markersize=4)
-plt.plot(camber_x, camber_y, '--', color='gray')
+plt.plot(x_vals, camber_vals, '--', color='gray')
 
 plt.title("Airfoil Sample " + str(sample_n))
 ax = plt.gca()

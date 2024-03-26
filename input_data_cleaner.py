@@ -22,6 +22,7 @@ def get_input_data():
 
     airfoil_tags = []
     airfoil_names = []
+    latent_parameters = []
 
     for i in range(0, len(split_data)):
 
@@ -44,13 +45,15 @@ def get_input_data():
             if j == 0:
                 airfoil_data[j] = airfoil_data[j].replace('[', '').replace(']', '').replace('\n', '').strip().split('\t')
                 airfoil_data[j] = list(filter(None, airfoil_data[j]))
+                airfoil_data[j] = list(map(float, airfoil_data[j]))
+                latent_parameters.append(airfoil_data[j])
 
             else:
 
                 airfoil_data[j] = list(filter(None, airfoil_data[j].replace('[', '').replace(']', '').replace('\n','').strip().split(' ')))
+                airfoil_data[j] = list(map(float, airfoil_data[j]))
 
-            airfoil_data[j] = list(map(float, airfoil_data[j]))
+        split_data[i] = airfoil_data # i just did this so i could write split_data[i] more intuitively as airfoil_data so my brain would understand what's going on, see first comment in this main for loop
 
-        split_data[i] = airfoil_data # i just dit this so i could write split_data[i] more intuitively as airfoil_data so my brain would understand what's going on, see first comment in this main for loop
 
-    return airfoil_tags, airfoil_names, split_data
+    return airfoil_tags, airfoil_names, split_data, latent_parameters
