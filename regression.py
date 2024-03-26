@@ -24,24 +24,24 @@ def regression(x,y,degree):
         response.append(Result[1])
         response.append(Result[2])
         response.append(Residuals[0])
-    #elif degree in ['Cubic', 'cubic', 3, 'three']:
-        #Value = np.polyfit(x,y,3, full = True)
-        #Results = Value[0]
-        #Residual = Value[1]
-        #response = []
-        #response.append(Results[0])
-        #response.append(Results[1])
-        #response.append(Results[2])
-        #response.append(Results[3])
-        #response.append(Residual[0])
-        #print(Value)
+    elif degree in ['Cubic', 'cubic', 3, 'three']:
+        Value = np.polyfit(x,y,3, full = True)
+        Results = Value[0]
+        Residual = Value[1]
+        response = []
+        response.append(Results[0])
+        response.append(Results[1])
+        response.append(Results[2])
+        response.append(Results[3])
+        response.append(Residual[0])
+        print(Value)
 
 
 
     return response
 
-#x = [1,2,3,4]
-#y = [1,8,27,100]
+#x = [1,3,5,8,9,14,15,27,37,53]
+#y = [1,15,37,45,91,1500,6500,10900,85,157]
 #regress = regression(x,y,3)
 #print(regress)
 #ax.scatter(x,y)
