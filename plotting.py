@@ -38,7 +38,7 @@ def plotter(list_choice,n_latent): # n_latent is the index of the latent paramet
        list=extracted_output_elements
   else :
       list= extracted_input_elements + extracted_output_elements
-  return list 
+  return list
 
 # NEED TO ADD THE FEATURES IN THIS FUNCTION ABOVE, SO THAT THE FUNCTION WILL PLOT, WORKING ON CURRENTLY :)
  
