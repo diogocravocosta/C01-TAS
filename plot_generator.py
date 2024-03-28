@@ -30,4 +30,4 @@ def generate(x,y,Title, x_label, y_label):
 
 #x = np.linspace(0,10, 10)
 #y = x + x**3
-#generate(x,y, "NOT Test Plot", "x", "y")
+#generate(x,y, "nice Test Plot", "x", "y")
