@@ -57,3 +57,8 @@ def camber(sample,RandOrInput): # returns:   polynomial for camber line,   x val
     TE_angle = np.arctan(  deriv_1  )
 
     return eq, x_maxcamb, maxcamb, LE_angle, TE_angle
+
+
+
+content = "0.235897239841,35928"
+print(content[content.find(",")+1:])
