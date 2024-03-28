@@ -10,6 +10,10 @@ import warnings
 
 from thickness_characteristics_extractor import random_thickness_to_chord, input_thickness_to_chord
 
+import os
+def cls()
+    os.system('cls' if os.name =='nt' else 'clear')
+
 #xlist = [] #parameters
 #ylist = [] #characteristic
 
@@ -68,7 +72,7 @@ from thickness_characteristics_extractor import random_thickness_to_chord, input
 file1 = open("Regressdata.txt", "a")
 
 min = 0
-max = min + 20
+max = min + 300
 
 def correlateData():
 
@@ -77,9 +81,20 @@ def correlateData():
         B,C,D,E,F = camber(num,1)
         G,H = input_thickness_to_chord(num)
 
-        line = str(num) + A[num] + "(" + C + "," + D + "," + E + "," + F + "," + G + "," + H + ")"
+        line = "Sample " + str(num) + "\n latent parameters:"
+        for k in range(8):
+            line = line + "\n" + str(A[num][k])
+        line = line + "\nmaxcamb_position: \n" + str(C)
+        line = line + "\nmaxcamb: \n" + str(D)
+        line = line + "\nLE_angle: \n" + str(E)
+        line = line + "\nTE_angle: \n" + str(F)
+        line = line + "\nthickness_to_chord: \n" + str(G)
+        line = line + "\nmax_thickness_position: \n" + str(H)
 
-        file1.write(line+"\n")
+        file1.write(line+"\n====\n")
+
+        cls()
+        print(str(100*num/(max-min))+"%")
 
     print("done")
 
