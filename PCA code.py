@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 from sklearn import preprocessing
 from sklearn.decomposition import PCA
 
-from output_data_cleaner import get_output_airfoil
+from output_data_cleaner import get_output_airfoil_data
 
 # rewriting airfoil coordinates to get only y values
 xy_coordinates, _ = get_output_airfoil_data(False, 0)
@@ -37,11 +37,11 @@ data_skl, var_skl = by_sklearn(X, 8)
 
 # NO POINT IN PLOTTING 8 DIMENSIONS
 
-fig, axs = plt.subplots(nrows=1, ncols=2, figsize=(10, 4))
-
-PC_values = np.arange(pca.n_components_) + 1
-plt.plot(PC_values, pca.explained_variance_ratio_, 'o-', linewidth=2, color='blue')
-plt.title('Scree Plot')
-plt.xlabel('Principal Component')
-plt.ylabel('Variance Explained')
-plt.show()
+# fig, axs = plt.subplots(nrows=1, ncols=2, figsize=(10, 4))
+#
+# PC_values = np.arange(pca.n_components_) + 1
+# plt.plot(PC_values, pca.explained_variance_ratio_, 'o-', linewidth=2, color='blue')
+# plt.title('Scree Plot')
+# plt.xlabel('Principal Component')
+# plt.ylabel('Variance Explained')
+# plt.show()
