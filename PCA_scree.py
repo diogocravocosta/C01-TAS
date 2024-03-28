@@ -31,17 +31,14 @@ def by_sklearn(X:np.array, k:int):
 
     return new_data, variances
 
-# perform PCA on data using PCA from sklearn
-data_skl, var_skl = by_sklearn(X, 8)
+principal_components = [1,2,3,4,5,6,7,8,9,10]
+variances = []
 
+for i in range(1, 11):
+    _, variance_ratio = by_sklearn(X, i)
+    variances.append(variance_ratio[(i-1)])
 
-# NO POINT IN PLOTTING 8 DIMENSIONS
+print(variances)
 
-# fig, axs = plt.subplots(nrows=1, ncols=2, figsize=(10, 4))
-#
-# PC_values = np.arange(pca.n_components_) + 1
-# plt.plot(PC_values, pca.explained_variance_ratio_, 'o-', linewidth=2, color='blue')
-# plt.title('Scree Plot')
-# plt.xlabel('Principal Component')
-# plt.ylabel('Variance Explained')
-# plt.show()
+plt.plot(principal_components, variances, '-o', color='purple')
+plt.show()
