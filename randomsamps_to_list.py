@@ -5,29 +5,22 @@ def samples_to_list(path):# path like 'random_samples.txt'
 
     #open the file
 
-    with open(path, "r") as file:
+    with open('random_samples.txt', 'r') as file:
         sample_count = -1
         for line in file:
             line = line.strip()
             if line.startswith('Sample'):
-                #Start of a new Sample
-                sample_count += 1 
+                sample_count += 1
             elif line.startswith('latent parameters:'):
                 for i in range(8):
                     latent_param = float(next(file).strip())
                     latent_parameters_lists[i].append(latent_param)
-            elif line.startswith('maxcamb_position'):
-                characteristics_lists[0].append(float(line.split(":")[1].strip()))
-            elif line.startswith('maxcamb'):
-                characteristics_lists[1].append(float(line.split(":")[1].strip()))
-            elif line.startswith('LE_angle'):
-                characteristics_lists[2].append(float(line.split(":")[1].strip()))
-            elif line.startswith('TE_angle'):
-                characteristics_lists[3].append(float(line.split(":")[1].strip()))
-            elif line.startswith('thickness_to_chord'):
-                characteristics_lists[4].append(float(line.split(":")[1].strip()))
-            elif line.startswith('max_thickness_position'):
-                characteristics_lists[5].append(float(line.split(":")[1].strip()))
+            elif line.startswith(('maxcamb_position', 'maxcamb', 'LE_angle', 'TE_angle', 'thickness_to_chord', 'max_thickness_position')):
+                characteristic_value = line.split(":")[1].strip()
+                if not characteristic_value:
+                    characteristic_value = next(file).strip()
+                characteristics_lists[0].append(float(characteristic_value))
+            # Check for other characteristics in the same way
     file.close()
     #Print/use lists as needed
 
