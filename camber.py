@@ -79,3 +79,5 @@ def camber(sample,RandOrInput): # returns:   polynomial for camber line,   x val
     return eq, x_maxcamb, maxcamb, LE_angle, TE_angle
 
 
+
+
