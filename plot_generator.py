@@ -27,6 +27,6 @@ def generate(x,y,Title, x_label, y_label):
     plt.savefig("plot_images/"+Title +'.png')
 
 
-#x = np.linspace(0,1000, 10)
+#x = np.linspace(0,10, 10)
 #y = x + x**3
-#generate(x,y, "Test Plot", "x", "y")
+#generate(x,y, "NOT Test Plot", "x", "y")
