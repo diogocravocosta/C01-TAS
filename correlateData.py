@@ -11,7 +11,7 @@ import warnings
 from thickness_characteristics_extractor import random_thickness_to_chord, input_thickness_to_chord
 
 import os
-def cls()
+def cls():
     os.system('cls' if os.name =='nt' else 'clear')
 
 #xlist = [] #parameters
@@ -71,8 +71,8 @@ def cls()
 
 file1 = open("Regressdata.txt", "a")
 
-min = 0
-max = min + 300
+min = 1619
+max = min + 600
 
 def correlateData():
 
@@ -94,7 +94,7 @@ def correlateData():
         file1.write(line+"\n====\n")
 
         cls()
-        print(str(100*num/(max-min))+"%")
+        print(str(100*(num-min)/(max-min))+"%")
 
     print("done")
 
