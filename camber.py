@@ -28,8 +28,11 @@ def camber(sample,RandOrInput): # returns:   polynomial for camber line,   x val
         for i in range(1,101,1):
             x1,y1 = xyvalues(sample,i)
             _,y2 = xyvalues(sample,200-i)
-            x_list.append(x)
-            y_list.append((y1+y2)/2)
+            x[i] = x1
+            y[i] = (y1+y2)/2
+            finalval = 100
+            #x_list.append(x)
+            #y_list.append((y1+y2)/2)
 
     elif RandOrInput == 1:
         _,_,A,_ = get_input_data()
@@ -74,5 +77,7 @@ def camber(sample,RandOrInput): # returns:   polynomial for camber line,   x val
 
 
     return eq, x_maxcamb, maxcamb, LE_angle, TE_angle
+
+
 
 
