@@ -3,5 +3,7 @@ from plot_generator import generate
 
 
 latent_parameters_lists, characteristics_lists = samples_to_list('Regressdata.txt')
+for param in range(8):
+    for char in range(6): 
+        generate(latent_parameters_lists[param],characteristics_lists[char],"Latent Parameter "+ str(param)+" and characteristic "+ str(char), "Latent Parameter", "Characteristic "+ str(param))
 
-generate(latent_parameters_lists[0],characteristics_lists,"First Latent Parameter and Max Camber Position Relation", "Latent Parameter", "$\frac{x}{c}$")
