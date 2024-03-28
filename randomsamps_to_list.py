@@ -1,4 +1,4 @@
-def sampless_to_list(path):# path like 'random_samples.txt'
+def samples_to_list(path):# path like 'random_samples.txt'
     #lists for latent parameters and characteristics 
     latent_parameters_lists = [[],[],[],[],[],[],[],[]]
     characteristics_lists = [[],[],[],[],[],[]]
