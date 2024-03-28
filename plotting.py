@@ -48,12 +48,14 @@ def camberlistmaker(list_choice):
         camber_values = camber(i, list_choice)
 
         #append each value to the list
-        x_maxcamb.append(camber_values[0])
-        maxcamb.append(camber_values[1])
-        le_angle.append(camber_values[2])
-        te_angle.append(camber_values[3])
-    print(x_maxcamb)
+        x_maxcamb.append(camber_values[1])
+        maxcamb.append(camber_values[2])
+        le_angle.append(camber_values[3])
+        te_angle.append(camber_values[4])
+
     return x_maxcamb, maxcamb, le_angle, te_angle
+
+print(camber(5,0))
 
 '''
 def camberlistmaker(feature,list_choice): #LIST CHOICE 1 MEANS INPUT, 0 MEANS OUTPUT/RANDOM DATA

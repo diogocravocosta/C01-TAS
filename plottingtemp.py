@@ -52,10 +52,12 @@ def camberlistmaker(list_choice):
         maxcamb.append(camber_values[1])
         le_angle.append(camber_values[2])
         te_angle.append(camber_values[3])
-    print(x_maxcamb)
     return x_maxcamb, maxcamb, le_angle, te_angle
      
-camberlistmaker(1)
+y,u,i,o = camberlistmaker(0) 
+print(y)
+
+
 
 
 
