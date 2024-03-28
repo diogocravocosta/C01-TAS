@@ -1,3 +1,4 @@
+#code to run the regressions for all of the chatacteristic and latent parameters combinations and generate the plots
 from randomsamps_to_list import samples_to_list
 from plot_generator import generate
 

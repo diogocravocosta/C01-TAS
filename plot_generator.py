@@ -25,7 +25,7 @@ def generate(x,y,Title, x_label, y_label):
     ax.plot(x_array, y_array_cubic, label = "Cubic $R^2$ ="+ str(round(regress_cubic[4], 4)) + '| y = ' + str(round(regress_cubic[0], 4)) +'$x**3$ +'+ str(round(regress_cubic[1], 4)) +'$x**2$ +' + str(round(regress_cubic[2], 4)) + 'x +' + str(round(regress_cubic[3], 4)), linewidth = 3)
     ax.legend()
     plt.savefig("plot_images/"+Title +'.png')
-    matplotlib.pyplot.close()
+    #plt.close()
 
 
 #x = np.linspace(0,10, 10)

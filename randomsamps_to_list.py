@@ -2,11 +2,14 @@ def samples_to_list(path):
     # Initialize lists for latent parameters and characteristics 
     latent_parameters_lists = [[], [], [], [], [], [], [], []]
     characteristics_lists = [[], [], [], [], [], []]
-
+    skip = 0
     # Open the file
     with open(path, 'r') as file:
         sample_count = -1
         for line in file:
+            if skip >0:
+                skip -= 1
+                continue
             line = line.strip()
             if line.startswith('Sample'):
                 sample_count += 1
@@ -22,6 +25,9 @@ def samples_to_list(path):
                 # Determine the index of the characteristic within characteristics_lists
                 if characteristic_name == 'maxcamb_position':
                     char_index = 0
+                    if characteristic_value == -1:
+                        skip = 11
+                        continue
                 elif characteristic_name == 'maxcamb':
                     char_index = 1
                 elif characteristic_name == 'LE_angle':
@@ -32,6 +38,7 @@ def samples_to_list(path):
                     char_index = 4
                 elif characteristic_name == 'max_thickness_position':
                     char_index = 5
+                
                 characteristics_lists[char_index].append(float(characteristic_value))
 
     # Return the lists
