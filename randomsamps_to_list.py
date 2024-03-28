@@ -1,11 +1,10 @@
-def samples_to_list(path):# path like 'random_samples.txt'
-    #lists for latent parameters and characteristics 
-    latent_parameters_lists = [[],[],[],[],[],[],[],[]]
-    characteristics_lists = [[],[],[],[],[],[]]
+def samples_to_list(path):
+    # Initialize lists for latent parameters and characteristics 
+    latent_parameters_lists = [[], [], [], [], [], [], [], []]
+    characteristics_lists = [[], [], [], [], [], []]
 
-    #open the file
-
-    with open('random_samples.txt', 'r') as file:
+    # Open the file
+    with open(path, 'r') as file:
         sample_count = -1
         for line in file:
             line = line.strip()
@@ -16,15 +15,24 @@ def samples_to_list(path):# path like 'random_samples.txt'
                     latent_param = float(next(file).strip())
                     latent_parameters_lists[i].append(latent_param)
             elif line.startswith(('maxcamb_position', 'maxcamb', 'LE_angle', 'TE_angle', 'thickness_to_chord', 'max_thickness_position')):
-                characteristic_value = line.split(":")[1].strip()
+                characteristic_name, characteristic_value = line.split(":")
+                characteristic_value = characteristic_value.strip()
                 if not characteristic_value:
                     characteristic_value = next(file).strip()
-                characteristics_lists[0].append(float(characteristic_value))
-            # Check for other characteristics in the same way
-    file.close()
-    #Print/use lists as needed
+                # Determine the index of the characteristic within characteristics_lists
+                if characteristic_name == 'maxcamb_position':
+                    char_index = 0
+                elif characteristic_name == 'maxcamb':
+                    char_index = 1
+                elif characteristic_name == 'LE_angle':
+                    char_index = 2
+                elif characteristic_name == 'TE_angle':
+                    char_index = 3
+                elif characteristic_name == 'thickness_to_chord':
+                    char_index = 4
+                elif characteristic_name == 'max_thickness_position':
+                    char_index = 5
+                characteristics_lists[char_index].append(float(characteristic_value))
 
-    #print('Latent Parameters:')
-    #for i, latent_list in enumerate(latent_parameters_lists):
-    #    print(f"Latent PA")
+    # Return the lists
     return latent_parameters_lists, characteristics_lists
