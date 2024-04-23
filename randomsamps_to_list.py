@@ -80,7 +80,7 @@ def samples_to_list_symmetric(path):
                 elif characteristic_name == 'max_thickness_position':
                     char_index = 5
 
-                if char_index == 0 and float(characteristic_value) < -1.01 or float(characteristic_value) > -0.99:
+                if char_index == 0 and (float(characteristic_value) < -1.01 or float(characteristic_value)) > -0.99:
                     characteristics_lists[char_index].append(float(characteristic_value))
 
                 elif char_index == 1:
