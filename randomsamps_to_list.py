@@ -47,8 +47,8 @@ def samples_to_list(path):
 
 def samples_to_list_symmetric(path):
     # Initialize lists for latent parameters and characteristics 
-    latent_parameters_lists = [[[], [], [], [], [], [], [], []]]
-    characteristics_lists = [ [[], []] ]
+    latent_parameters_lists = [[], [], [], [], [], [], [], []]
+    characteristics_lists = [[], [], [], [], [], []]
 
     # Open the file
     with open(path, 'r') as file:
