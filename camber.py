@@ -59,7 +59,7 @@ def camber(sample,RandOrInput): # returns:   polynomial for camber line,   x val
     deriv = np.polyder(np.poly1d(z))
     rootlist = np.roots(deriv)
     x_maxcamb = -1
-    maxcamb = -1
+    maxcamb = 0
     for root in rootlist:
         string = str(root)
         complexnt = string.find("0j") # real-valued root
@@ -79,5 +79,6 @@ def camber(sample,RandOrInput): # returns:   polynomial for camber line,   x val
     return eq, x_maxcamb, maxcamb, LE_angle, TE_angle
 
 
+#Sample 1457 & 1458
 
-
+print(camber(1457,1))
