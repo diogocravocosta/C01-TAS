@@ -88,7 +88,7 @@ def samples_to_list_symmetric(path):
                         characteristics_lists[char_index].append(float(characteristic_value))
                     else:
                         for i in range(8):
-                            latent_parameters_lists[i].pop                      
+                            latent_parameters_lists[i].pop()                    
                 
                 #characteristics_lists[1][char_index].append(float(characteristic_value))
 
