@@ -57,3 +57,7 @@ def get_input_data():
 
 
     return airfoil_tags, airfoil_names, split_data, latent_parameters
+
+# airfoil_tags, airfoil_names, split_data, latent_parameters = get_input_data()
+#
+# print(len(airfoil_names))

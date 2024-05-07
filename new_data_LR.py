@@ -62,7 +62,7 @@ r_csv_values_mk2.append(r_3)
 r_csv_values_mk2.append(r_4)
 r_csv_values_mk2.append(r_5)
 
-csv_file_path = 'poopie_value_outputs.csv'
+csv_file_path = 'new_input_value_outputs.csv'
 
 with open(csv_file_path, mode='w', newline='') as file:
     # Create a csv.writer object

@@ -17,6 +17,14 @@ def t_c_list_random():
         output_t_c = tc.random_thickness_to_chord(i)[0]
         t_c_output_list.append(output_t_c)
     return t_c_output_list
+
+def t_c_list_new():
+    samples, latent_parameters = get_output_airfoil_data() #retrieves input airfoil tag, name and its coordinates & latent parameters
+    t_c_output_list = []
+    for i in range(0,len(samples)):
+        output_t_c = tc.random_thickness_to_chord(i)[0]
+        t_c_output_list.append(output_t_c)
+    return t_c_output_list
 def t_c_position_input():
     airfoil_tags, airfoil_names, split_data = get_input_data()
     x_list = [] 

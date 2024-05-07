@@ -65,8 +65,9 @@ def get_new_airfoil_data():  # the one_value thing is just so we can use this fu
     return samples, latent_parameters
 
 # samples, latent_parameters = get_new_airfoil_data()
+# print(len(latent_parameters))
 
-# print(latent_parameters[1])
+
 
 
 
