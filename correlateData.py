@@ -72,13 +72,13 @@ def cls():
 
 file1 = open("Regressdata.txt", "a")
 
-min = 1619
-max = min + 600
+min = 0
+max = min + 805
 
 def correlateData():
 
     for num in range(min, max):
-        _,A = get_new_airfoil_data()
+        _,_,_,A = get_input_data()
         B,C,D,E,F = camber(num,1)
         G,H = input_thickness_to_chord(num)
 
@@ -100,10 +100,11 @@ def correlateData():
     print("done")
 
 
+
 def correlateNewData():
 
     for num in range(min, max):
-        _,_,_,A = get_input_data()
+        _,A = get_new_airfoil_data()
         B,C,D,E,F = camber(num,2)
         G,H = new_thickness_to_chord(num)
 
@@ -136,7 +137,7 @@ def correlateNewData():
 
 
 
-correlateData()
+correlateNewData()
 
 
 file1.close()

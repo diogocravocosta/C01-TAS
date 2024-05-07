@@ -48,7 +48,7 @@ def camber(sample,RandOrInput): # returns:   polynomial for camber line,   x val
             finalval = int((len(xy)-1)/2)
 
     elif RandOrInput == 2:
-        A,_ = get_input_data()
+        A,_ = get_new_airfoil_data()
         xy = A[sample][1:]
         for i in range(0,int((len(xy)-1)/2)+1):
             x1,y1 = xy[i]
