@@ -5,10 +5,11 @@ import scipy
 
 from camber import camber
 from input_data_cleaner import get_input_data
+from new_data_cleaner import get_new_airfoil_data
 from numpy.polynomial import Polynomial
 import warnings
 
-from thickness_characteristics_extractor import random_thickness_to_chord, input_thickness_to_chord
+from thickness_characteristics_extractor import random_thickness_to_chord, input_thickness_to_chord, new_thickness_to_chord
 
 import os
 def cls():
@@ -77,7 +78,7 @@ max = min + 600
 def correlateData():
 
     for num in range(min, max):
-        _,_,_,A = get_input_data()
+        _,A = get_new_airfoil_data()
         B,C,D,E,F = camber(num,1)
         G,H = input_thickness_to_chord(num)
 
@@ -98,6 +99,30 @@ def correlateData():
 
     print("done")
 
+
+def correlateNewData():
+
+    for num in range(min, max):
+        _,_,_,A = get_input_data()
+        B,C,D,E,F = camber(num,2)
+        G,H = new_thickness_to_chord(num)
+
+        line = "Sample " + str(num) + "\n latent parameters:"
+        for k in range(8):
+            line = line + "\n" + str(A[num][k])
+        line = line + "\nmaxcamb_position: \n" + str(C)
+        line = line + "\nmaxcamb: \n" + str(D)
+        line = line + "\nLE_angle: \n" + str(E)
+        line = line + "\nTE_angle: \n" + str(F)
+        line = line + "\nthickness_to_chord: \n" + str(G)
+        line = line + "\nmax_thickness_position: \n" + str(H)
+
+        file1.write(line+"\n====\n")
+
+        cls()
+        print(str(100*(num-min)/(max-min))+"%")
+
+    print("done")
 
 
 # Characteristic index

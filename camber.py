@@ -4,6 +4,7 @@ from Readline import xyvalues
 import scipy
 
 from input_data_cleaner import get_input_data
+from new_data_cleaner import get_new_airfoil_data
 from numpy.polynomial import Polynomial
 import warnings
 
@@ -17,7 +18,7 @@ z = np.array([0,0,0,0,0,0,0,0])
 deriv = np.array([0,0,0,0,0,0,0])
 
 def camber(sample,RandOrInput): # returns:   polynomial for camber line,   x value of max camb,   max camb,   LE angle (rad),   TE angle (rad)
-        # Random data: 0  input data: 1
+        # Random data: 0  input data: 1  new data : 2
     finalval = -1
     for k in range(len(x)):
         if x[k] != -1000: 
@@ -36,6 +37,18 @@ def camber(sample,RandOrInput): # returns:   polynomial for camber line,   x val
 
     elif RandOrInput == 1:
         _,_,A,_ = get_input_data()
+        xy = A[sample][1:]
+        for i in range(0,int((len(xy)-1)/2)+1):
+            x1,y1 = xy[i]
+            _,y2 = xy[len(xy)-i-1]
+            x[i] = x1
+            y[i] = (y1+y2)/2
+            #x_list.append(x)
+            #y_list.append((y1+y2)/2)     
+            finalval = int((len(xy)-1)/2)
+
+    elif RandOrInput == 2:
+        A,_ = get_input_data()
         xy = A[sample][1:]
         for i in range(0,int((len(xy)-1)/2)+1):
             x1,y1 = xy[i]
