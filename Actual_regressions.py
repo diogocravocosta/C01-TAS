@@ -4,6 +4,7 @@ from plot_generator import generate
 import csv
 import numpy as np
 from regression import regression
+
 latent_parameters_lists, characteristics_lists = samples_to_list('Regressdata.txt')
 latent_parameters_lists_symmetric, characteristics_lists_symmetric = samples_to_list_symmetric('Regressdata.txt')
 

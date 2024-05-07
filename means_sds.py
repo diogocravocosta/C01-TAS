@@ -70,45 +70,43 @@ print(plot_samples[0][2])
 # the 0 means the 1st latent parameter, the 2 means the highest value
 # if you were to do [0][0] you would get the lowest value (i.e. mean) of latent parameter 1
 
-check_lp = 7     # this is one lESS than the latent parameter than youre trynna get
+fig, axs = plt.subplots(4, 2, figsize=(20, 10))  # You can adjust the figsize as needed
 
-x_vals_0 = []
-y_vals_0 = []
+for check_lp in range(8):
+    # Calculate the position in the subplot grid (row, column)
+    row = check_lp % 4
+    col = check_lp // 4
 
-x_vals_1 = []
-y_vals_1 = []
+    # Axes for current subplot
+    ax = axs[row, col]
 
-x_vals_2 = []
-y_vals_2 = []
+    # just writing the coordinates in a diff format so i can plot them using matplotlib
+    x_vals_0 = []
+    y_vals_0 = []
 
-for coordinate_pair_i in range(0, len(plot_samples[check_lp][0])):
-    x = plot_samples[check_lp][0][coordinate_pair_i][0]
-    y = plot_samples[check_lp][0][coordinate_pair_i][1]
-    x_vals_0.append(x)
-    y_vals_0.append(y)
+    for coordinate_pair in plot_samples[check_lp][0]:
+        x, y = coordinate_pair
+        x_vals_0.append(x)
+        y_vals_0.append(y)
 
-for coordinate_pair_i in range(0, len(plot_samples[0][1])):
-    x = plot_samples[check_lp][1][coordinate_pair_i][0]
-    y = plot_samples[check_lp][1][coordinate_pair_i][1]
-    x_vals_1.append(x)
-    y_vals_1.append(y)
+    x_vals_2 = []
+    y_vals_2 = []
 
-for coordinate_pair_i in range(0, len(plot_samples[0][2])):
-    x = plot_samples[check_lp][2][coordinate_pair_i][0]
-    y = plot_samples[check_lp][2][coordinate_pair_i][1]
-    x_vals_2.append(x)
-    y_vals_2.append(y)
+    for coordinate_pair in plot_samples[check_lp][2]:
+        x, y = coordinate_pair
+        x_vals_2.append(x)
+        y_vals_2.append(y)
 
+    ax.plot(x_vals_0, y_vals_0, color='red', markersize=4, label=f'mean {check_lp+1}')
+    ax.plot(x_vals_2, y_vals_2, color='green', markersize=4, label=f'mean {check_lp+1}+2 sigma')
 
+    ax.set_aspect('equal', adjustable='box')
+    ax.axhline(y=0.155, color='color')
+    ax.grid(True)
+    ax.set_title(f'Latent parameter {check_lp+1}')
+    ax.legend()
 
-plt.plot(x_vals_0, y_vals_0, '-o', color='red', markersize=4, label='mean')
-# plt.plot(x_vals_1, y_vals_1, '-o', color='blue', markersize=4, label='middle')
-plt.plot(x_vals_2, y_vals_2, '-o', color='green', markersize=4, label='max')
+plt.tight_layout()
 
-ax = plt.gca()
-ax.set_aspect('equal', adjustable='box')
-
-plt.legend()
-
-plt.grid()
+# Display the complete figure with all subplots
 plt.show()
