@@ -19,7 +19,7 @@ def random_thickness_to_chord(sample_num): #returns the thickness to chord from 
 
 def input_thickness_to_chord(sample_num): #returns the thickness to chord from a certain airfoil IN THE LIST OF THE RANDOM ONES, sample_num is the sample number of the airfoil
 
-    #code from nabihah to extract the airfoil's characteristics
+
     airfoil_tags, airfoil_names, split_data, latent_parameters = get_input_data() # gets the airfoil data and latent parameters (I dont really need latent parameters but we ball)
     airfoil_n = sample_num
     x_vals = []
@@ -42,7 +42,7 @@ def input_thickness_to_chord(sample_num): #returns the thickness to chord from a
 
 def new_thickness_to_chord(sample_num): #returns the thickness to chord from a certain airfoil IN THE LIST OF THE RANDOM ONES, sample_num is the sample number of the airfoil
 
-    #code from nabihah to extract the airfoil's characteristics
+
     split_data, latent_parameters = get_new_airfoil_data() # gets the airfoil data and latent parameters (I dont really need latent parameters but we ball)
     airfoil_n = sample_num
     x_vals = []
