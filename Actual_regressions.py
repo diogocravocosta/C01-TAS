@@ -5,8 +5,8 @@ import csv
 import numpy as np
 from regression import regression
 
-latent_parameters_lists, characteristics_lists = samples_to_list('Regressdata.txt')
-latent_parameters_lists_symmetric, characteristics_lists_symmetric = samples_to_list_symmetric('Regressdata.txt')
+latent_parameters_lists, characteristics_lists = samples_to_list('InputRegressdata.txt')
+latent_parameters_lists_symmetric, characteristics_lists_symmetric = samples_to_list_symmetric('InputRegressdata.txt')
 
 r_csv_values=[]
 for param in range(8):

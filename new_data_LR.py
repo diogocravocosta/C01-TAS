@@ -27,11 +27,16 @@ for param in range(8):
         generate(parlist, charlist, "Latent Parameter " + str(param) + " and characteristic " + str(char),
                  "Latent Parameter " + str(param), "Characteristic " + str(char))
         r_vals = []
-
+        ybar = np.mean(charlist)
+        sstot = 0
+        for i in range(len(charlist)):
+            sstot += (charlist[i] - ybar)**2
+        
         for i in range(3):
             r_vals.append(regression(parlist, charlist, i + 1)[-1])
         nice_r = min(r_vals)
-        r_param_values.append(nice_r)
+        really_nice_r = 1 - (nice_r / sstot)
+        r_param_values.append(really_nice_r)
     r_csv_values.append(r_param_values)
 
 # normalize r^2 (for some godforsaken reason)
@@ -46,12 +51,12 @@ def normalize(X):
 for i in range(8):
     for c in range(6):
         lst[c].append(r_csv_values[i][c])
-r_0 = list(normalize(np.array(lst[0])))
-r_1 = list(normalize(np.array(lst[1])))
-r_2 = list(normalize(np.array(lst[2])))
-r_3 = list(normalize(np.array(lst[3])))
-r_4 = list(normalize(np.array(lst[4])))
-r_5 = list(normalize(np.array(lst[5])))
+r_0 = list((np.array(lst[0])))
+r_1 = list((np.array(lst[1])))
+r_2 = list((np.array(lst[2])))
+r_3 = list((np.array(lst[3])))
+r_4 = list((np.array(lst[4])))
+r_5 = list((np.array(lst[5])))
 
 r_csv_values_mk2 = []
 
