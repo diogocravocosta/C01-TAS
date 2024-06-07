@@ -10,6 +10,7 @@ latent_parameters_lists_symmetric, characteristics_lists_symmetric = samples_to_
 
 r_csv_values=[]
 for param in range(8):
+    
     r_param_values = []
     for char in range(6):
 
