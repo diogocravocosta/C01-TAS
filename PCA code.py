@@ -45,3 +45,4 @@ data_skl, var_skl = by_sklearn(X, 8)
 # plt.xlabel('Principal Component')
 # plt.ylabel('Variance Explained')
 # plt.show()
+#test
